@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject currentTile;
+    public List<GameObject> tileSet;
+
     void Start()
     {
         Cursor.visible = false;
+
+        var resources = Resources.LoadAll("Tiles", typeof(GameObject));
+
+        foreach (GameObject obj in resources)
+        {
+            tileSet.Add(obj);
+        }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (Input.GetKeyDown("1"))
+        {
+            
+        }
+
+        if (Input.GetKeyDown("2"))
+        {
+            
+        }
     }
 }
