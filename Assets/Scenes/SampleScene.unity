@@ -400,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fb972191d3a3dca49821beea8d3831b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -545,21 +545,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridHighlightParent
       objectReference: {fileID: 0}
+    - target: {fileID: 7819559971762176429, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819559971762176429, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.27
+      objectReference: {fileID: 0}
     - target: {fileID: 8393934922681708797, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8393934922681708797, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0377833
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 8393934922681708797, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1456831
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 8393934922681708797, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14023125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8393934922681708797, guid: 5516b903f72c6dc42bf9a69348f9f6b9, type: 3}
       propertyPath: m_LocalRotation.w
