@@ -28,6 +28,7 @@ public class PlaceSystem : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
+            _gameManager.GetComponent<GameManager>().numTilesPlaced++;
             Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
         }
     }
