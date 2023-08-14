@@ -18,6 +18,8 @@ public class PlaceSystem : MonoBehaviour
 
     public GameObject tileToSpawn;
 
+    public GameObject[][] placedTiles;
+
     private void Update()
     {
         Vector3 mousePosition = _inputManager.GetSelectedPos();
@@ -31,6 +33,7 @@ public class PlaceSystem : MonoBehaviour
             tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
             _gameManager.GetComponent<GameManager>().numTilesPlaced++;
             Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
+            placedTiles[gridPosition.x][gridPosition.y] = tileToSpawn;
         }
     }
 }

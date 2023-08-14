@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject currentTile;
     public List<GameObject> tileSet;
     public TextMeshProUGUI pathText;
-
-    //Christine's attempt. Please delete if necessary.
+    
     public GameObject cornerTImage;
     public GameObject straightTImage;
 
@@ -32,8 +31,7 @@ public class GameManager : MonoBehaviour
         {
             tileSet.Add(obj);
         }
-
-        //Christine's attempt. Please delete if necessary.
+        
         cornerTImage.SetActive(false);
         straightTImage.SetActive(false);
         minLengthMet = false;
