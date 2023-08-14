@@ -22,6 +22,7 @@ public class PlaceSystem : MonoBehaviour
     {
         Vector3 mousePosition = _inputManager.GetSelectedPos();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+        Debug.Log(gridPosition);
         gridHighlight.transform.position = grid.CellToWorld(gridPosition);
         mouseCursor.transform.position = mousePosition;
 
