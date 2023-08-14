@@ -72,4 +72,15 @@ public class PlaceSystem : MonoBehaviour
             }
         }
     }
+
+    /*private bool CanPlaceTile(Vector3Int gridPosition)
+    {
+        // Convert grid position to world position
+        Vector3 worldPosition = grid.CellToWorld(gridPosition);
+
+        // Check if there is an existing tile at the given position
+        Collider2D coll = Physics2D.OverlapPoint(worldPosition);
+
+        return coll == null;
+    }*/
 }
