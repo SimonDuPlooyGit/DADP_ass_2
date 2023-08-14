@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject currentTile;
     public List<GameObject> tileSet;
     public TextMeshProUGUI pathText;

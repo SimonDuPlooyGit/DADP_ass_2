@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using TMPro;
 
 public class PlaceSystem : MonoBehaviour
 {
@@ -16,6 +17,18 @@ public class PlaceSystem : MonoBehaviour
 
     public GameManager _gameManager;
 
+    public TextMeshProUGUI CornerLeftTXT;
+    public TextMeshProUGUI StraightLeftTXT;
+
+    public int cornerTiles;
+    public int straightTiles;
+
+    public int cornerTilesUsed;
+    public int straightTilesUsed;
+
+    public int cornerTilesTotal;
+    public int straightTilesTotal;
+
     public GameObject tileToSpawn;
     public GameObject tileSpawned;
 
@@ -23,8 +36,17 @@ public class PlaceSystem : MonoBehaviour
     private float time;
     public bool rotateAble = true;
 
+    private void Start()
+    {
+        cornerTiles = cornerTilesTotal;
+        straightTiles = straightTilesTotal;
+    }
+
     private void Update()
     {
+        CornerLeftTXT.text = "# Left: " + cornerTiles;
+        StraightLeftTXT.text = "# Left: " + straightTiles;
+
         Vector3 mousePosition = _inputManager.GetSelectedPos();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
         gridHighlight.transform.position = grid.CellToWorld(gridPosition);
@@ -57,17 +79,28 @@ public class PlaceSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
-            _gameManager.GetComponent<GameManager>().numTilesPlaced++;
-            tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
 
-            if (_gameManager.cornerTile == true)
+            if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal)
             {
+                tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
+                _gameManager.GetComponent<GameManager>().numTilesPlaced++;
+                tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
+
                 tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.cornerTImage.transform.rotation;
+
+                cornerTilesUsed += 1;
+                cornerTiles -= 1;
             }
-            else if (_gameManager.straightTile == true)
+            else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal)
             {
+                tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
+                _gameManager.GetComponent<GameManager>().numTilesPlaced++;
+                tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
+
                 tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.straightTImage.transform.rotation;
+
+                straightTilesUsed += 1;
+                straightTiles -= 1;
             }
         }
 
