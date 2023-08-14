@@ -7,6 +7,9 @@ public class DeletingTiles : MonoBehaviour
     [SerializeField]
     private GameManager _gameManager;
 
+    [SerializeField]
+    private PlaceSystem _placeSystem;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
@@ -18,6 +21,10 @@ public class DeletingTiles : MonoBehaviour
             }
 
             _gameManager.numTilesPlaced = 0;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+            _placeSystem.cornerTilesUsed = 0;
+            _placeSystem.straightTilesUsed = 0;
         }        
     }
 }
