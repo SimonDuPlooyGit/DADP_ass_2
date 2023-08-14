@@ -17,6 +17,11 @@ public class PlaceSystem : MonoBehaviour
     public GameManager _gameManager;
 
     public GameObject tileToSpawn;
+    public GameObject tileSpawned;
+
+    private float betweenRotation = 0.2f;
+    private float time;
+    public bool rotateAble = true;
 
     private void Update()
     {
@@ -26,11 +31,45 @@ public class PlaceSystem : MonoBehaviour
         gridHighlight.transform.position = grid.CellToWorld(gridPosition);
         mouseCursor.transform.position = mousePosition;
 
+        if (Input.GetKey(KeyCode.R) && rotateAble == true)
+        {
+            rotateAble = false;
+
+            if (_gameManager.cornerTile == true)
+            {
+                _gameManager.cornerTImage.transform.Rotate(0, 0, 90);
+            }
+            else if (_gameManager.straightTile == true)
+            {
+                _gameManager.straightTImage.transform.Rotate(0, 0, 90);
+            }
+        }
+
+        if (rotateAble == false)
+        {
+            time += Time.deltaTime;
+
+            if (time > betweenRotation)
+            {
+                rotateAble = true;
+                time = 0;
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
             _gameManager.GetComponent<GameManager>().numTilesPlaced++;
-            Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
+            tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
+
+            if (_gameManager.cornerTile == true)
+            {
+                tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.cornerTImage.transform.rotation;
+            }
+            else if (_gameManager.straightTile == true)
+            {
+                tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.straightTImage.transform.rotation;
+            }
         }
     }
 }
