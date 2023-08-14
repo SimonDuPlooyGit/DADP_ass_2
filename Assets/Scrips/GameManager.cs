@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
             cornerTile = true;
             straightTile = false;
+            currentTile = tileSet[0];
         }
 
         if (Input.GetKeyDown("2"))
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
             cornerTile = false;
             straightTile = true;
+            currentTile = tileSet[1];
         }
     }
 }

@@ -426,6 +426,8 @@ MonoBehaviour:
   gridHighlight: {fileID: 1877178505}
   mouseCursor: {fileID: 1683333124}
   _inputManager: {fileID: 1587641080}
+  _gameManager: {fileID: 200018283}
+  tileToSpawn: {fileID: 0}
 --- !u!1 &505474497
 GameObject:
   m_ObjectHideFlags: 0
