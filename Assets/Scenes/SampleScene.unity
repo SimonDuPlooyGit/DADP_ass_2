@@ -270,6 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200018284}
   - component: {fileID: 200018283}
+  - component: {fileID: 200018285}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -296,6 +297,7 @@ MonoBehaviour:
   straightTImage: {fileID: 963014176}
   cornerTile: 0
   straightTile: 0
+  minLengthMet: 0
   numTilesPlaced: 0
   minPathLength: 10
 --- !u!4 &200018284
@@ -313,6 +315,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200018285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200018282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70059e5cc09e2845a8ce7389b7db1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManager: {fileID: 200018283}
 --- !u!1 &328001036
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +446,8 @@ MonoBehaviour:
   _inputManager: {fileID: 1587641080}
   _gameManager: {fileID: 200018283}
   tileToSpawn: {fileID: 0}
+  tileSpawned: {fileID: 0}
+  rotateAble: 1
 --- !u!1 &505474497
 GameObject:
   m_ObjectHideFlags: 0
