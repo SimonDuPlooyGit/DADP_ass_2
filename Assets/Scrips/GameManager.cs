@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentTile;
     public List<GameObject> tileSet;
+    public TextMeshProUGUI pathText;
 
     //Christine's attempt. Please delete if necessary.
     public GameObject cornerTImage;
@@ -14,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     public bool cornerTile;
     public bool straightTile;
+    public bool minLengthMet;
+
+    public int numTilesPlaced = 0;
+    public int minPathLength = 10;
 
     void Start()
     {
@@ -29,6 +36,7 @@ public class GameManager : MonoBehaviour
         //Christine's attempt. Please delete if necessary.
         cornerTImage.SetActive(false);
         straightTImage.SetActive(false);
+        minLengthMet = false;
     }
 
     
@@ -54,6 +62,14 @@ public class GameManager : MonoBehaviour
             cornerTile = false;
             straightTile = true;
             currentTile = tileSet[1];
+        }
+
+        String displayString = "Min Path Length: " + numTilesPlaced + "/" + minPathLength;
+        pathText.text = displayString;
+
+        if (numTilesPlaced >= minPathLength)
+        {
+            minLengthMet = true;
         }
     }
 }
