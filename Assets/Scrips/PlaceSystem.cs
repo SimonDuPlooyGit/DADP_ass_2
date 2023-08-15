@@ -103,20 +103,5 @@ public class PlaceSystem : MonoBehaviour
                 straightTiles -= 1;
             }
         }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100) && hit.transform.gameObject != null)
-            {
-                if (hit.transform.tag == "Wall")
-                {
-                    GameObject.Destroy(hit.transform.gameObject);
-                }
-
-                Debug.Log("RightClicked");
-            }
-        }
     }
 }
