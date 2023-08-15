@@ -10,6 +10,8 @@ public class WinningStuff : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("You win");
+
+
         }
     }
 }

@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public int numTilesPlaced = 0;
     public int minPathLength = 10;
 
+    public int Level = 1;
+
     public Camera mainCam;
     private bool building;
     private bool moving;
@@ -33,7 +35,25 @@ public class GameManager : MonoBehaviour
     public bool[,] occupiedArray = new bool[6,6];
 
     public Vector3 playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
-    
+
+    public UIManager _uiManager;
+
+    public GameObject TutLevel1BO;
+    public GameObject TutLevel2BO;
+    public GameObject TutLevel3BO;
+    public GameObject TutLevel4BO;
+    public GameObject Level1BO;
+    public GameObject Level2BO;
+    public GameObject Level3BO;
+
+    public GameObject TutLevel1GS;
+    public GameObject TutLevel2GS;
+    public GameObject TutLevel3GS;
+    public GameObject TutLevel4GS;
+    public GameObject Level1GS;
+    public GameObject Level2GS;
+    public GameObject Level3GS;
+
     void Start()
     {
         Cursor.visible = false;
@@ -58,17 +78,7 @@ public class GameManager : MonoBehaviour
             {
                 occupiedArray[i,j] = false;
             }
-        }
-
-        //Pain
-        occupiedArray[5,0] = true;
-        occupiedArray[4,2] = true;
-        occupiedArray[5,4] = true;
-        occupiedArray[5,5] = true;
-        occupiedArray[2,2] = true;
-        occupiedArray[2,3] = true;
-        occupiedArray[2,4] = true;
-        occupiedArray[0,5] = true;
+        }        
     }
 
     
@@ -116,6 +126,202 @@ public class GameManager : MonoBehaviour
         if (moving)
         {
             mainCam.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
+        }
+    }
+
+    public void PlayLevel()
+    {
+        Level += 1;
+        if (Level == 1)
+        {
+            TutLevel1BO.SetActive(true);
+            TutLevel1GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[0, 4] = true;
+            occupiedArray[0, 3] = true;
+            occupiedArray[0, 2] = true;
+            occupiedArray[0, 1] = true;
+            occupiedArray[0, 0] = true;
+            occupiedArray[1, 5] = true;
+            occupiedArray[1, 4] = true;
+            occupiedArray[1, 3] = true;
+            occupiedArray[1, 2] = true;
+            occupiedArray[1, 1] = true;
+            occupiedArray[1, 0] = true;
+            occupiedArray[3, 5] = true;
+            occupiedArray[3, 4] = true;
+            occupiedArray[3, 3] = true;
+            occupiedArray[3, 2] = true;
+            occupiedArray[3, 1] = true;
+            occupiedArray[3, 0] = true;
+            occupiedArray[4, 5] = true;
+            occupiedArray[4, 4] = true;
+            occupiedArray[4, 3] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[4, 1] = true;
+            occupiedArray[4, 0] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 4] = true;
+            occupiedArray[5, 3] = true;
+            occupiedArray[5, 2] = true;
+            occupiedArray[5, 1] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 2)
+        {
+            TutLevel2BO.SetActive(true);
+            TutLevel2GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[0, 4] = true;
+            occupiedArray[0, 3] = true;
+            occupiedArray[0, 2] = true;
+            occupiedArray[0, 1] = true;
+            occupiedArray[0, 0] = true;
+            occupiedArray[1, 5] = true;
+            occupiedArray[1, 4] = true;
+            occupiedArray[2, 5] = true;
+            occupiedArray[2, 4] = true;
+            occupiedArray[2, 2] = true;
+            occupiedArray[2, 1] = true;
+            occupiedArray[2, 0] = true;
+            occupiedArray[3, 5] = true;
+            occupiedArray[3, 4] = true;
+            occupiedArray[3, 2] = true;
+            occupiedArray[3, 1] = true;
+            occupiedArray[3, 0] = true;
+            occupiedArray[4, 5] = true;
+            occupiedArray[4, 4] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[4, 1] = true;
+            occupiedArray[4, 0] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 4] = true;
+            occupiedArray[5, 2] = true;
+            occupiedArray[5, 1] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 3)
+        {
+            TutLevel3BO.SetActive(true);
+            TutLevel3GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[0, 4] = true;
+            occupiedArray[0, 3] = true;
+            occupiedArray[0, 2] = true;
+            occupiedArray[1, 5] = true;
+            occupiedArray[1, 4] = true;
+            occupiedArray[1, 3] = true;
+            occupiedArray[1, 0] = true;
+            occupiedArray[2, 5] = true;
+            occupiedArray[2, 4] = true;
+            occupiedArray[2, 1] = true;
+            occupiedArray[2, 0] = true;
+            occupiedArray[3, 5] = true;
+            occupiedArray[3, 2] = true;
+            occupiedArray[3, 1] = true;
+            occupiedArray[3, 0] = true;
+            occupiedArray[4, 3] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[4, 1] = true;
+            occupiedArray[4, 0] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 4] = true;
+            occupiedArray[5, 3] = true;
+            occupiedArray[5, 2] = true;
+            occupiedArray[5, 1] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 4)
+        {
+            TutLevel4BO.SetActive(true);
+            TutLevel4GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[0, 4] = true;
+            occupiedArray[0, 3] = true;
+            occupiedArray[0, 2] = true;
+            occupiedArray[0, 1] = true;
+            occupiedArray[0, 0] = true;
+            occupiedArray[1, 5] = true;
+            occupiedArray[1, 4] = true;
+            occupiedArray[1, 3] = true;
+            occupiedArray[2, 5] = true;
+            occupiedArray[2, 4] = true;
+            occupiedArray[2, 3] = true;
+            occupiedArray[2, 1] = true;
+            occupiedArray[2, 0] = true;
+            occupiedArray[3, 5] = true;
+            occupiedArray[3, 1] = true;
+            occupiedArray[3, 0] = true;
+            occupiedArray[4, 5] = true;
+            occupiedArray[4, 3] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[4, 1] = true;
+            occupiedArray[4, 0] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 3] = true;
+            occupiedArray[5, 2] = true;
+            occupiedArray[5, 1] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 5)
+        {
+            Level1BO.SetActive(true);
+            Level1GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[2, 4] = true;
+            occupiedArray[2, 3] = true;
+            occupiedArray[2, 2] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 4] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 6)
+        {
+            Level2BO.SetActive(true);
+            Level2GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[0, 5] = true;
+            occupiedArray[0, 4] = true;
+            occupiedArray[1, 5] = true;
+            occupiedArray[1, 4] = true;
+            occupiedArray[2, 2] = true;
+            occupiedArray[3, 3] = true;
+            occupiedArray[4, 1] = true;
+            occupiedArray[4, 0] = true;
+            occupiedArray[5, 1] = true;
+            occupiedArray[5, 0] = true;
+        }
+        else if (Level == 7)
+        {
+            Level3BO.SetActive(true);
+            Level3GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            //Pain
+            occupiedArray[2, 5] = true;
+            occupiedArray[2, 4] = true;
+            occupiedArray[2, 1] = true;
+            occupiedArray[2, 0] = true;
+            occupiedArray[5, 5] = true;
+            occupiedArray[5, 0] = true;
         }
     }
 
