@@ -69,14 +69,6 @@ public class GameManager : MonoBehaviour
         occupiedArray[2,3] = true;
         occupiedArray[2,4] = true;
         occupiedArray[0,5] = true;
-     
-        for (int i = 0; i < 6; i++)
-        {
-            for (int j = 0; j < 6; j++)
-            {
-                Debug.Log(occupiedArray[i,j]);
-            }
-        }
     }
 
     
