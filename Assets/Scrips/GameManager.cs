@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private bool building;
     private bool moving;
 
+    public bool[,] occupiedArray;
+
     public Vector3 playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
     
     void Start()
@@ -49,6 +51,25 @@ public class GameManager : MonoBehaviour
         cornerTImage.SetActive(false);
         straightTImage.SetActive(false);
         minLengthMet = false;
+
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                occupiedArray[i,j] = false;
+            }
+        }
+
+        //Pain
+        occupiedArray[5,0] = true;
+        occupiedArray[4,2] = true;
+        occupiedArray[5,4] = true;
+        occupiedArray[5,5] = true;
+        occupiedArray[2,2] = true;
+        occupiedArray[2,3] = true;
+        occupiedArray[2,4] = true;
+        occupiedArray[0,5] = true;
+        
     }
 
     
