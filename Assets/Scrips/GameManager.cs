@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     private bool building;
     private bool moving;
 
-    public Vector3 playerSpawn = new Vector3(-3.75f, -3.75f, -1f);
+    public Vector3 playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
 
     void Start()
     {
