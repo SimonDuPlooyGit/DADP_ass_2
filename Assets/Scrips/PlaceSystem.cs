@@ -79,7 +79,7 @@ public class PlaceSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal /*&& _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y] != true*/)
+            if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] != true)
             {
                 tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
                 _gameManager.GetComponent<GameManager>().numTilesPlaced++;
@@ -90,7 +90,7 @@ public class PlaceSystem : MonoBehaviour
                 cornerTilesUsed += 1;
                 cornerTiles -= 1;
             }
-            else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal /*&& _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y]!= true*/)
+            else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y]!= true)
             {
                 tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
                 _gameManager.GetComponent<GameManager>().numTilesPlaced++;

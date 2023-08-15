@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     private bool building;
     private bool moving;
 
-    public bool[,] occupiedArray;
+    public bool[,] occupiedArray = new bool[6,6];
 
     public Vector3 playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
     
@@ -69,7 +69,14 @@ public class GameManager : MonoBehaviour
         occupiedArray[2,3] = true;
         occupiedArray[2,4] = true;
         occupiedArray[0,5] = true;
-        
+     
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                Debug.Log(occupiedArray[i,j]);
+            }
+        }
     }
 
     
