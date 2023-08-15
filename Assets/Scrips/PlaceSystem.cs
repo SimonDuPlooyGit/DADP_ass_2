@@ -81,6 +81,7 @@ public class PlaceSystem : MonoBehaviour
         {
             if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] != true)
             {
+                _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] = true;
                 tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
                 _gameManager.GetComponent<GameManager>().numTilesPlaced++;
                 tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
@@ -92,6 +93,7 @@ public class PlaceSystem : MonoBehaviour
             }
             else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y]!= true)
             {
+                _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] = true;
                 tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
                 _gameManager.GetComponent<GameManager>().numTilesPlaced++;
                 tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
