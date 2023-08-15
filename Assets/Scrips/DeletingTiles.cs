@@ -25,23 +25,24 @@ public class DeletingTiles : MonoBehaviour
             _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
             _placeSystem.cornerTilesUsed = 0;
             _placeSystem.straightTilesUsed = 0;
-        }
 
-        for (int i = 0; i < 6; i++)
-        {
-            for (int j = 0; j < 6; j++)
+            for (int i = 0; i < 6; i++)
             {
-                _gameManager.GetComponent<GameManager>().occupiedArray[i, j] = false;
+                for (int j = 0; j < 6; j++)
+                {
+                    _gameManager.GetComponent<GameManager>().occupiedArray[i, j] = false;
+                }
             }
-        }
 
-        _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[2, 3] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
-        _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+            //Pain
+            _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[2, 3] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+            _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+        }        
     }
 }
