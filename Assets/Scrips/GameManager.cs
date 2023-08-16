@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
         Level += 1;
         if (Level == 1)
         {
+            _uiManager.One.SetActive(true);
             minPathLength = 6;
             TutLevel1BO.SetActive(true);
             TutLevel1GS.SetActive(true);
@@ -176,6 +177,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 2)
         {
+            _uiManager.Two.SetActive(true);
             minPathLength = 8;
             TutLevel2BO.SetActive(true);
             TutLevel2GS.SetActive(true);
@@ -215,6 +217,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 3)
         {
+            _uiManager.Three.SetActive(true);
             minPathLength = 10;
             TutLevel3BO.SetActive(true);
             TutLevel3GS.SetActive(true);
@@ -252,6 +255,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 4)
         {
+            _uiManager.Four.SetActive(true);
             minPathLength = 9;
             TutLevel4BO.SetActive(true);
             TutLevel4GS.SetActive(true);
@@ -290,6 +294,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 5)
         {
+            _uiManager.Five.SetActive(true);
             minPathLength = 10;
             Level1BO.SetActive(true);
             Level1GS.SetActive(true);
@@ -309,6 +314,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 6)
         {
+            _uiManager.Six.SetActive(true);
             minPathLength = 12;
             Level2BO.SetActive(true);
             Level2GS.SetActive(true);
@@ -330,6 +336,7 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 7)
         {
+            _uiManager.Seven.SetActive(true);
             minPathLength = 15;
             Level3BO.SetActive(true);
             Level3GS.SetActive(true);

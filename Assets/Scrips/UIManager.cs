@@ -12,6 +12,25 @@ public class UIManager : MonoBehaviour
 
     public GameManager _gameManager;
 
+    public GameObject One;
+    public GameObject Two;
+    public GameObject Three;
+    public GameObject Four;
+    public GameObject Five;
+    public GameObject Six;
+    public GameObject Seven;
+
+    private void Start()
+    {
+        One.SetActive(false);
+        Two.SetActive(false);
+        Three.SetActive(false);
+        Four.SetActive(false);
+        Five.SetActive(false);
+        Six.SetActive(false);
+        Seven.SetActive(false);
+    }
+
     private void Update()
     {
         PlayLevel.text = "Play Level: " + (_gameManager.Level + 1);

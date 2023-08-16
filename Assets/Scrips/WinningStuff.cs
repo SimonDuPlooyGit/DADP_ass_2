@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinningStuff : MonoBehaviour
 {
@@ -33,6 +34,19 @@ public class WinningStuff : MonoBehaviour
             _gameManager.GetComponent<GameManager>().switchToBuilding();
 
             Cursor.visible = true;
+
+            _uiManager.One.SetActive(false);
+            _uiManager.Two.SetActive(false);
+            _uiManager.Three.SetActive(false);
+            _uiManager.Four.SetActive(false);
+            _uiManager.Five.SetActive(false);
+            _uiManager.Six.SetActive(false);
+            _uiManager.Seven.SetActive(false);
+
+            if (_gameManager.Level == 7)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 }
