@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Level += 1;
         
-        //gameObject.GetComponent<DeletingTiles>().justDelete();
+        gameObject.GetComponent<DeletingTiles>().justDelete();
         
         if (Level == 1)
         {

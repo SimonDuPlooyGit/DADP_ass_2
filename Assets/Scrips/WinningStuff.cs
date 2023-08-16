@@ -16,7 +16,6 @@ public class WinningStuff : MonoBehaviour
             Debug.Log("You win");
             _gameManager.GetComponent<GameManager>().minLengthMet = false;
             _uiManager.LevelComplete.SetActive(true);
-            _deletingTiles.justDelete();
 
             _gameManager.GetComponent<GameManager>().TutLevel1BO.SetActive(false);
             _gameManager.GetComponent<GameManager>().TutLevel2BO.SetActive(false);
