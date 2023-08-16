@@ -8,7 +8,7 @@ public class DeletingTiles : MonoBehaviour
     private GameManager _gameManager;
 
     [SerializeField]
-    private PlaceSystem _placeSystem;
+    private PlaceSystem _placeSystem;    
 
     private void Update()
     {

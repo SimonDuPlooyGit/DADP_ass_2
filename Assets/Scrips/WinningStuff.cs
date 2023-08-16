@@ -12,7 +12,7 @@ public class WinningStuff : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("You win");
-
+            _uiManager.LevelComplete.SetActive(true);
             _gameManager.GetComponent<GameManager>().TutLevel1BO.SetActive(false);
             _gameManager.GetComponent<GameManager>().TutLevel2BO.SetActive(false);
             _gameManager.GetComponent<GameManager>().TutLevel3BO.SetActive(false);
