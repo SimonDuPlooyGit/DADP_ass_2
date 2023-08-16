@@ -14,6 +14,12 @@ public class DeletingTiles : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            delete();
+        }        
+    }
+
+    public void delete()
+    {
             GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
             for (int i = 0; i < walls.Length; i++)
             {
@@ -197,6 +203,29 @@ public class DeletingTiles : MonoBehaviour
                 _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
                 _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
             }
-        }        
     }
+
+    public void justDelete()
+    {
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+        for (int i = 0; i < walls.Length; i++)
+        {
+            Destroy(walls[i]);
+        }
+
+        _gameManager.numTilesPlaced = 0;
+        _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+        _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+        _placeSystem.cornerTilesUsed = 0;
+        _placeSystem.straightTilesUsed = 0;
+
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                _gameManager.GetComponent<GameManager>().occupiedArray[i, j] = false;
+            }
+        }
+    }
+    
 }

@@ -7,13 +7,17 @@ public class WinningStuff : MonoBehaviour
 {
     public GameManager _gameManager;
     public UIManager _uiManager;
+    public DeletingTiles _deletingTiles;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && _gameManager.GetComponent<GameManager>().minLengthMet == true)
         {
             Debug.Log("You win");
+            _gameManager.GetComponent<GameManager>().minLengthMet = false;
             _uiManager.LevelComplete.SetActive(true);
+            _deletingTiles.justDelete();
+
             _gameManager.GetComponent<GameManager>().TutLevel1BO.SetActive(false);
             _gameManager.GetComponent<GameManager>().TutLevel2BO.SetActive(false);
             _gameManager.GetComponent<GameManager>().TutLevel3BO.SetActive(false);
