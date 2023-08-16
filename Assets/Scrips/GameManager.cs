@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public GameObject cornerTImage;
     public GameObject straightTImage;
 
+    public GameObject Corner;
+    public GameObject Straight;
+
     public bool cornerTile;
     public bool straightTile;
     public bool minLengthMet;
@@ -58,6 +61,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Corner.SetActive(false);
+        Straight.SetActive(false);
+
         building = true;
         moving = false;
         player.SetActive(false);
@@ -133,16 +139,22 @@ public class GameManager : MonoBehaviour
         
         if (Level == 1)
         {
-            _placeSystem.straightTilesTotal = 6;
-            
-            var resources = Resources.LoadAll("TilesTut1", typeof(GameObject));
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
             tileSet.Clear();
 
             foreach (GameObject obj in resources)
             {
                 tileSet.Add(obj);
             }
-            
+
+            _placeSystem.cornerTilesTotal = 0;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 6;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             playerSpawn = new Vector3(-0.75f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.One.SetActive(true);
@@ -185,9 +197,9 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 2)
         {
-            _placeSystem.cornerTilesTotal = 1;
-            _placeSystem.straightTilesTotal = 7;
-            
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
             var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
             tileSet.Clear();
 
@@ -195,7 +207,13 @@ public class GameManager : MonoBehaviour
             {
                 tileSet.Add(obj);
             }
-            
+
+            _placeSystem.cornerTilesTotal = 1;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 7;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             playerSpawn = new Vector3(-2.25f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Two.SetActive(true);
@@ -236,9 +254,17 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 3)
         {
-            _placeSystem.cornerTilesTotal = 8;
-            _placeSystem.straightTilesTotal = 2;
-            
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+
             playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Three.SetActive(true);
@@ -246,7 +272,13 @@ public class GameManager : MonoBehaviour
             TutLevel3BO.SetActive(true);
             TutLevel3GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
-            
+
+            _placeSystem.cornerTilesTotal = 8;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 2;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             //Pain
             occupiedArray[0, 5] = true;
             occupiedArray[0, 4] = true;
@@ -277,17 +309,23 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 4)
         {
-            _placeSystem.cornerTilesTotal = 3;
-            _placeSystem.straightTilesTotal = 6;
-            
-            var resources = Resources.LoadAll("TilesBeyond", typeof(GameObject));
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
             tileSet.Clear();
-            
+
             foreach (GameObject obj in resources)
             {
                 tileSet.Add(obj);
             }
-            
+
+            _placeSystem.cornerTilesTotal = 3;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 6;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             playerSpawn = new Vector3(-2.25f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Four.SetActive(true);
@@ -327,6 +365,17 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 5)
         {
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+
             playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Five.SetActive(true);
@@ -334,7 +383,13 @@ public class GameManager : MonoBehaviour
             Level1BO.SetActive(true);
             Level1GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
-            
+
+            _placeSystem.cornerTilesTotal = 6;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 7;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             //Pain
             occupiedArray[0, 5] = true;
             occupiedArray[2, 4] = true;
@@ -347,6 +402,17 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 6)
         {
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+
             playerSpawn = new Vector3(-2.25f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Six.SetActive(true);
@@ -354,7 +420,13 @@ public class GameManager : MonoBehaviour
             Level2BO.SetActive(true);
             Level2GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
-            
+
+            _placeSystem.cornerTilesTotal = 9;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 6;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
             //Pain
             occupiedArray[0, 5] = true;
             occupiedArray[0, 4] = true;
@@ -369,6 +441,17 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 7)
         {
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+
             playerSpawn = new Vector3(-3.75f, -2.25f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Seven.SetActive(true);
@@ -376,6 +459,12 @@ public class GameManager : MonoBehaviour
             Level3BO.SetActive(true);
             Level3GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            _placeSystem.cornerTilesTotal = 9;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 9;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
 
             //Pain
             occupiedArray[2, 5] = true;

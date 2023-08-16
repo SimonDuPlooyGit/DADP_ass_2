@@ -1553,6 +1553,8 @@ MonoBehaviour:
   _placeSystem: {fileID: 481163069}
   cornerTImage: {fileID: 1209004109}
   straightTImage: {fileID: 963014176}
+  Corner: {fileID: 1456605785}
+  Straight: {fileID: 505474497}
   cornerTile: 0
   straightTile: 0
   minLengthMet: 0
@@ -6874,9 +6876,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Challenge tiles must be used to create the path in order to move to
-    the next level. \n\nPress R to rotate the tiles.\n\nPress BackSpace to retry.\n\nAfter
-    Placing the tiles press Enter to enter the movement phase."
+  m_text: 'Now apply all that you have learned.
+
+
+    Press R to rotate the tiles.
+
+
+    Press
+    BackSpace to retry.
+
+
+    After Placing the tiles press Enter to enter the movement
+    phase.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7911,9 +7922,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Click Key 1 to activate the corner tiles. \n\nLeft click to place the
-    tiles. \n\nPress BackSpace to retry.\n\nAfter Placing the tiles press Enter to
-    enter the movement phase."
+  m_text: "Click Key 1 to activate the corner tiles, an 2 to activate the straight
+    Tiles.\n\nLeft click to place the tiles. \n\nPress R to rotate the tiles.\n\nPress
+    BackSpace to retry.\n\nAfter Placing the tiles press Enter to enter the movement
+    phase."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
