@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject highlight;
     public Canvas buildUI;
     public GameObject cursor;
+    public PlaceSystem _placeSystem;
     
     public GameObject cornerTImage;
     public GameObject straightTImage;
@@ -60,15 +61,7 @@ public class GameManager : MonoBehaviour
         building = true;
         moving = false;
         player.SetActive(false);
-        
-        //Moving this to the if statements and then making use of the different folders
-        /*var resources = Resources.LoadAll("Tiles", typeof(GameObject));
 
-        foreach (GameObject obj in resources)
-        {
-            tileSet.Add(obj);
-        }*/
-        
         cornerTImage.SetActive(false);
         straightTImage.SetActive(false);
         minLengthMet = false;
@@ -140,6 +133,8 @@ public class GameManager : MonoBehaviour
         
         if (Level == 1)
         {
+            _placeSystem.straightTilesTotal = 6;
+            
             var resources = Resources.LoadAll("TilesTut1", typeof(GameObject));
             tileSet.Clear();
 
@@ -190,6 +185,9 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 2)
         {
+            _placeSystem.cornerTilesTotal = 1;
+            _placeSystem.straightTilesTotal = 7;
+            
             var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
             tileSet.Clear();
 
@@ -238,6 +236,9 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 3)
         {
+            _placeSystem.cornerTilesTotal = 8;
+            _placeSystem.straightTilesTotal = 2;
+            
             playerSpawn = new Vector3(-3.75f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Three.SetActive(true);
@@ -276,6 +277,9 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 4)
         {
+            _placeSystem.cornerTilesTotal = 3;
+            _placeSystem.straightTilesTotal = 6;
+            
             var resources = Resources.LoadAll("TilesBeyond", typeof(GameObject));
             tileSet.Clear();
             
