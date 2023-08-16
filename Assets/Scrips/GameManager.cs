@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public bool minLengthMet;
 
     public int numTilesPlaced = 0;
-    public int minPathLength = 10;
+    public int minPathLength;
 
     public int Level = 1;
 
@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
         building = true;
         moving = false;
         player.SetActive(false);
@@ -131,12 +130,16 @@ public class GameManager : MonoBehaviour
 
     public void PlayLevel()
     {
+        Cursor.visible = false;
         Level += 1;
         if (Level == 1)
         {
+            minPathLength = 6;
             TutLevel1BO.SetActive(true);
             TutLevel1GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-0.75f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -172,9 +175,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 2)
         {
+            minPathLength = 8;
             TutLevel2BO.SetActive(true);
             TutLevel2GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-2.25f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -208,9 +214,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 3)
         {
+            minPathLength = 10;
             TutLevel3BO.SetActive(true);
             TutLevel3GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-3.75f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -242,9 +251,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 4)
         {
+            minPathLength = 9;
             TutLevel4BO.SetActive(true);
             TutLevel4GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-2.25f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -277,9 +289,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 5)
         {
+            minPathLength = 10;
             Level1BO.SetActive(true);
             Level1GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-3.75f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -293,9 +308,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 6)
         {
+            minPathLength = 12;
             Level2BO.SetActive(true);
             Level2GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-2.25f, -3.75f, -3);
 
             //Pain
             occupiedArray[0, 5] = true;
@@ -311,9 +329,12 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 7)
         {
+            minPathLength = 15;
             Level3BO.SetActive(true);
             Level3GS.SetActive(true);
             _uiManager.betweenMenu.SetActive(false);
+
+            player.transform.position = new Vector3(-3.75f, -2.25f, -3);
 
             //Pain
             occupiedArray[2, 5] = true;
@@ -325,7 +346,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void switchToMoving()
+    public void switchToMoving()
     {
         moving = true;
         building = false;
@@ -336,7 +357,7 @@ public class GameManager : MonoBehaviour
         highlight.SetActive(false);
     }
 
-    private void switchToBuilding()
+    public void switchToBuilding()
     {
         building = true;
         moving = false;

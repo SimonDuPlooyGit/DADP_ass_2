@@ -34,15 +34,169 @@ public class DeletingTiles : MonoBehaviour
                 }
             }
 
-            //Pain
-            _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[2, 3] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
-            _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+            if (_gameManager.GetComponent<GameManager>().Level == 1)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 2)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 3)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 4)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 5)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 6)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[0, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[1, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 2] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[3, 3] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[4, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
+            else if (_gameManager.GetComponent<GameManager>().Level == 7)
+            {
+                //Pain
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 4] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 1] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[2, 0] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 5] = true;
+                _gameManager.GetComponent<GameManager>().occupiedArray[5, 0] = true;
+            }
         }        
     }
 }
