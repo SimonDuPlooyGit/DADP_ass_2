@@ -61,12 +61,13 @@ public class GameManager : MonoBehaviour
         moving = false;
         player.SetActive(false);
         
-        var resources = Resources.LoadAll("Tiles", typeof(GameObject));
+        //Moving this to the if statements and then making use of the different folders
+        /*var resources = Resources.LoadAll("Tiles", typeof(GameObject));
 
         foreach (GameObject obj in resources)
         {
             tileSet.Add(obj);
-        }
+        }*/
         
         cornerTImage.SetActive(false);
         straightTImage.SetActive(false);
@@ -139,6 +140,14 @@ public class GameManager : MonoBehaviour
         
         if (Level == 1)
         {
+            var resources = Resources.LoadAll("TilesTut1", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+            
             playerSpawn = new Vector3(-0.75f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.One.SetActive(true);
@@ -181,6 +190,14 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 2)
         {
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+            
             playerSpawn = new Vector3(-2.25f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Two.SetActive(true);
@@ -259,6 +276,14 @@ public class GameManager : MonoBehaviour
         }
         else if (Level == 4)
         {
+            var resources = Resources.LoadAll("TilesBeyond", typeof(GameObject));
+            tileSet.Clear();
+            
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+            
             playerSpawn = new Vector3(-2.25f, -3.75f, -3f);
             player.transform.position = playerSpawn;
             _uiManager.Four.SetActive(true);
