@@ -200,6 +200,14 @@ public class DeletingTiles : MonoBehaviour
                 _gameManager.occupiedArray[5, 5] = true;
                 _gameManager.occupiedArray[5, 0] = true;
             }
+            else if (_gameManager.Level == 8)
+            {
+                //Pain
+                _gameManager.occupiedArray[1, 2] = true;
+                _gameManager.occupiedArray[1, 3] = true;
+                _gameManager.occupiedArray[4, 2] = true;
+                _gameManager.occupiedArray[4, 3] = true;
+            }
     }
 
     public void justDelete()

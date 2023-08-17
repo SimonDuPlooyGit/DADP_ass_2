@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool cornerTile;
     public bool straightTile;
     public bool minLengthMet;
+    public bool checkpoint;
 
     public int numTilesPlaced = 0;
     public int minPathLength;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
     public GameObject Level1BO;
     public GameObject Level2BO;
     public GameObject Level3BO;
+    public GameObject Level4BO;
 
     public GameObject TutLevel1GS;
     public GameObject TutLevel2GS;
@@ -57,12 +59,14 @@ public class GameManager : MonoBehaviour
     public GameObject Level1GS;
     public GameObject Level2GS;
     public GameObject Level3GS;
+    public GameObject Level4GS;
 
     void Start()
     {
         Corner.SetActive(false);
         Straight.SetActive(false);
 
+        checkpoint = false;
         building = true;
         moving = false;
         player.SetActive(false);
@@ -470,6 +474,39 @@ public class GameManager : MonoBehaviour
             occupiedArray[2, 0] = true;
             occupiedArray[5, 5] = true;
             occupiedArray[5, 0] = true;
+        }
+        else if (Level == 8)
+        {
+            Corner.SetActive(true);
+            Straight.SetActive(true);
+
+            var resources = Resources.LoadAll("TilesTut2And3", typeof(GameObject));
+            tileSet.Clear();
+
+            foreach (GameObject obj in resources)
+            {
+                tileSet.Add(obj);
+            }
+
+            playerSpawn = new Vector3(-3.75f, 3.75f, -3f);
+            player.transform.position = playerSpawn;
+            _uiManager.Eight.SetActive(true);
+            minPathLength = 17;
+            Level4BO.SetActive(true);
+            Level4GS.SetActive(true);
+            _uiManager.betweenMenu.SetActive(false);
+
+            _placeSystem.cornerTilesTotal = 7;
+            _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
+
+            _placeSystem.straightTilesTotal = 15;
+            _placeSystem.straightTiles = _placeSystem.straightTilesTotal;
+
+            //Pain
+            occupiedArray[1, 2] = true;
+            occupiedArray[1, 3] = true;
+            occupiedArray[4, 2] = true;
+            occupiedArray[4, 3] = true;
         }
     }
 

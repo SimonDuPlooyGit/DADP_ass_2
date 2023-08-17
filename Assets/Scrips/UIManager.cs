@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public GameObject Five;
     public GameObject Six;
     public GameObject Seven;
+    public GameObject Eight;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
         Five.SetActive(false);
         Six.SetActive(false);
         Seven.SetActive(false);
+        Eight.SetActive(false);
     }
 
     private void Update()
