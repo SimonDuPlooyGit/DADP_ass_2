@@ -320,7 +320,7 @@ public class GameManager : MonoBehaviour
                 tileSet.Add(obj);
             }
 
-            _placeSystem.cornerTilesTotal = 3;
+            _placeSystem.cornerTilesTotal = 5;
             _placeSystem.cornerTiles = _placeSystem.cornerTilesTotal;
 
             _placeSystem.straightTilesTotal = 6;
@@ -354,12 +354,9 @@ public class GameManager : MonoBehaviour
             occupiedArray[3, 0] = true;
             occupiedArray[4, 5] = true;
             occupiedArray[4, 3] = true;
-            occupiedArray[4, 2] = true;
             occupiedArray[4, 1] = true;
             occupiedArray[4, 0] = true;
             occupiedArray[5, 5] = true;
-            occupiedArray[5, 3] = true;
-            occupiedArray[5, 2] = true;
             occupiedArray[5, 1] = true;
             occupiedArray[5, 0] = true;
         }

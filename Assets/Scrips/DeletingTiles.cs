@@ -158,12 +158,9 @@ public class DeletingTiles : MonoBehaviour
                 _gameManager.occupiedArray[3, 0] = true;
                 _gameManager.occupiedArray[4, 5] = true;
                 _gameManager.occupiedArray[4, 3] = true;
-                _gameManager.occupiedArray[4, 2] = true;
                 _gameManager.occupiedArray[4, 1] = true;
                 _gameManager.occupiedArray[4, 0] = true;
                 _gameManager.occupiedArray[5, 5] = true;
-                _gameManager.occupiedArray[5, 3] = true;
-                _gameManager.occupiedArray[5, 2] = true;
                 _gameManager.occupiedArray[5, 1] = true;
                 _gameManager.occupiedArray[5, 0] = true;
             }
