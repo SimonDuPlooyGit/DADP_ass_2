@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using TMPro;
-using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -131,6 +130,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayLevel()
     {
+        minLengthMet = false;
         _uiManager.Enter.SetActive(false);
         Cursor.visible = false;
         Level += 1;

@@ -79,11 +79,11 @@ public class PlaceSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] != true)
+            if (_gameManager.cornerTile == true && cornerTilesUsed < cornerTilesTotal && _gameManager.occupiedArray[gridPosition.x, gridPosition.y] != true)
             {
-                _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] = true;
-                tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
-                _gameManager.GetComponent<GameManager>().numTilesPlaced++;
+                _gameManager.occupiedArray[gridPosition.x, gridPosition.y] = true;
+                tileToSpawn = _gameManager.currentTile;
+                _gameManager.numTilesPlaced++;
                 tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
 
                 tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.cornerTImage.transform.rotation;
@@ -91,18 +91,18 @@ public class PlaceSystem : MonoBehaviour
                 cornerTilesUsed += 1;
                 cornerTiles -= 1;
             }
-            else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal && _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y]!= true)
+            else if (_gameManager.straightTile == true && straightTilesUsed < straightTilesTotal && _gameManager.occupiedArray[gridPosition.x,gridPosition.y]!= true)
             {
-                _gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x, gridPosition.y] = true;
-                tileToSpawn = _gameManager.GetComponent<GameManager>().currentTile;
-                _gameManager.GetComponent<GameManager>().numTilesPlaced++;
+                _gameManager.occupiedArray[gridPosition.x, gridPosition.y] = true;
+                tileToSpawn = _gameManager.currentTile;
+                _gameManager.numTilesPlaced++;
                 tileSpawned = Instantiate(tileToSpawn, grid.CellToWorld(gridPosition), quaternion.identity);
 
                 tileSpawned.transform.GetChild(0).transform.rotation = _gameManager.straightTImage.transform.rotation;
 
                 straightTilesUsed += 1;
                 straightTiles -= 1;
-            } else if (_gameManager.GetComponent<GameManager>().occupiedArray[gridPosition.x,gridPosition.y] != false)
+            } else if (_gameManager.occupiedArray[gridPosition.x,gridPosition.y] != false)
             {
                 Debug.Log("Spot already occupied");
             }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayersMovement : MonoBehaviour
 {
+    [SerializeField] private Grid grid;
+    public GameManager _gameManager;
+    
     public float speed = 1f;
     void Update()
     {
@@ -30,5 +33,13 @@ public class PlayersMovement : MonoBehaviour
         }
 
         transform.position = movePos;
+        
+        Vector3Int gridPosition = grid.WorldToCell(transform.position);
+
+        if (_gameManager.occupiedArray[gridPosition.x, gridPosition.y] == false)
+        {
+            _gameManager.switchToBuilding();
+        }
+        
     }
 }

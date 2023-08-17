@@ -7,34 +7,32 @@ public class WinningStuff : MonoBehaviour
 {
     public GameManager _gameManager;
     public UIManager _uiManager;
-    public DeletingTiles _deletingTiles;
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && _gameManager.GetComponent<GameManager>().minLengthMet == true)
+        if (collision.CompareTag("Player") && _gameManager.minLengthMet == true)
         {
             Debug.Log("You win");
-            _gameManager.GetComponent<GameManager>().minLengthMet = false;
             _uiManager.LevelComplete.SetActive(true);
 
-            _gameManager.GetComponent<GameManager>().TutLevel1BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel2BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel3BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel4BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level1BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level2BO.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level3BO.SetActive(false);
+            _gameManager.TutLevel1BO.SetActive(false);
+            _gameManager.TutLevel2BO.SetActive(false);
+            _gameManager.TutLevel3BO.SetActive(false);
+            _gameManager.TutLevel4BO.SetActive(false);
+            _gameManager.Level1BO.SetActive(false);
+            _gameManager.Level2BO.SetActive(false);
+            _gameManager.Level3BO.SetActive(false);
 
-            _gameManager.GetComponent<GameManager>().TutLevel1GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel2GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel3GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().TutLevel4GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level1GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level2GS.SetActive(false);
-            _gameManager.GetComponent<GameManager>().Level3GS.SetActive(false);
+            _gameManager.TutLevel1GS.SetActive(false);
+            _gameManager.TutLevel2GS.SetActive(false);
+            _gameManager.TutLevel3GS.SetActive(false);
+            _gameManager.TutLevel4GS.SetActive(false);
+            _gameManager.Level1GS.SetActive(false);
+            _gameManager.Level2GS.SetActive(false);
+            _gameManager.Level3GS.SetActive(false);
 
             _uiManager.betweenMenu.SetActive(true);
-            _gameManager.GetComponent<GameManager>().switchToBuilding();
+            _gameManager.switchToBuilding();
 
             Cursor.visible = true;
 
@@ -50,6 +48,10 @@ public class WinningStuff : MonoBehaviour
             {
                 SceneManager.LoadScene(2);
             }
+        }
+        else
+        {
+            _gameManager.switchToBuilding();
         }
     }
 }
