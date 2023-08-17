@@ -11822,6 +11822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c224f3fa754246b4da2748f9235c449d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 2052049897}
+  _gameManager: {fileID: 200018283}
   speed: 2
 --- !u!58 &1671036814
 CircleCollider2D:
