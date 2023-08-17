@@ -49,5 +49,9 @@ public class WinningStuff : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
+        else
+        {
+            _gameManager.switchToBuilding();
+        }
     }
 }
