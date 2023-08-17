@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayLevel()
     {
+        minLengthMet = false;
         _uiManager.Enter.SetActive(false);
         Cursor.visible = false;
         Level += 1;

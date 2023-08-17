@@ -14,7 +14,6 @@ public class WinningStuff : MonoBehaviour
         if (collision.CompareTag("Player") && _gameManager.GetComponent<GameManager>().minLengthMet == true)
         {
             Debug.Log("You win");
-            _gameManager.GetComponent<GameManager>().minLengthMet = false;
             _uiManager.LevelComplete.SetActive(true);
 
             _gameManager.GetComponent<GameManager>().TutLevel1BO.SetActive(false);
